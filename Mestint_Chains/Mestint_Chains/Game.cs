@@ -7,40 +7,23 @@ using System.Threading.Tasks;
 namespace Mestint_Chains
 {
     class Game
-    {
-        public List<int[]> originalBoard = new List<int[]>()
-        {
-            new int[]{0,0,0 },
-            new int[]{0,0,0,0 },
-            new int[]{0,0,0,0,0 },
-            new int[]{0,0,0,0 },
-            new int[]{0,0,0 },
-        };
-
-        public int[,] originalMatrix = new int[,]{
-            {-1,-1,0,0,0,-1},
-            {-1,0,0,0,0,-1},
-            {0,0,0,0,0,0},
-            {-1,0,0,0,0,-1},
-            {-1,-1,0,0,0,-1}
-        };
-        //int[] originalBoard = { 0, 1, 0, 0, 0, 0, 0, 0 };
+    {       
                               //0 -> empty, -1 - > wall
-        int  huPlayer = 1;    //black
-        int  aiPlayer = 2;    //white
+        int  player = 1;    //black
+        int  opponent = 2;    //white
 
-        int score;
+        int score = 0;
         List<int> emptyCells = new List<int>();
 
         public int Minimax(int[] newBoard, int player)
         {
             emptyCells = GetEmptyCells();
 
-            if (Winning(newBoard, huPlayer))
+            if (Winning(newBoard, this.player))
             {
                 return score = -10;
             }
-            else if (Winning(newBoard, aiPlayer))
+            else if (Winning(newBoard, this.opponent))
             {                
                 return score = 10;
             }
@@ -60,14 +43,14 @@ namespace Mestint_Chains
 
                 newBoard[emptyCells[i]] = player;
 
-                if (player == aiPlayer)
+                if (player == opponent)
                 {
-                    int result = Minimax(newBoard, huPlayer);
+                    int result = Minimax(newBoard, this.player);
                     moveScore = result;
                 }
                 else
                 {
-                    int result = Minimax(newBoard, aiPlayer);
+                    int result = Minimax(newBoard, opponent);
                     moveScore = result;
                 }
                 newBoard[emptyCells[i]] = moveIndex;
@@ -77,7 +60,7 @@ namespace Mestint_Chains
 
             int bestMove = 0;
 
-            if (player == aiPlayer)
+            if (player == opponent)
             {
                 int bestScore = -10000;
                 for (int i = 0; i < moves.Count; i++)
@@ -106,14 +89,25 @@ namespace Mestint_Chains
 
         private bool Winning(object newBoard, object huPlayer)
         {
+            //TODO
             throw new NotImplementedException();
         }
-
 
         private List<int> GetEmptyCells()
         {
-            throw new NotImplementedException();
-        }
+            MainWindow main = new MainWindow();
+            int[] currBoard = main.GetCurrentBoard();
 
+            List<int> indexes = new List<int>();
+
+            for (int i = 0; i < currBoard.Length; i++)
+            {
+                if (currBoard[i] == 0)
+                {
+                    indexes.Add(i);
+                }
+            }
+            return indexes;
+        }
     }
 }

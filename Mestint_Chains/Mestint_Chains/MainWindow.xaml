@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mestint_Chains"
         mc:Ignorable="d"
-        Title="AIChains" Height="300" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="AIChains" Height="300" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Orientation="Horizontal">
         <StackPanel Name="MyStackPanel" Margin="10" Orientation="Vertical"  Width="230">
             <!--1st row-->
@@ -73,10 +73,17 @@
                 </Grid.RowDefinitions>
             </Grid>
         </StackPanel>
-        <StackPanel Width="80" Margin="5">
+        <StackPanel Width="120" Margin="5">
             <Label Content="- AIChains -" HorizontalAlignment="Center" Foreground="White"/>
-            <Button Name="BlackButton" Content="Black(Human)" Background="Black" Foreground="White" Click="ChangeColor_Click"></Button>
-            <Button Name="WhiteButton" Content="White(AI)" Background="White" Click="ChangeColor_Click"></Button>
+            <Button Name="BlackButton" Content="Black(Player)" Background="Black" Foreground="White" Click="ChangeColor_Click"></Button>
+            <Button Name="WhiteButton" Content="White(Opponent)" Background="White" Click="ChangeColor_Click"></Button>
+            <Label Content="Next turn?" HorizontalAlignment="Center" Foreground="White"></Label>
+            <ComboBox Name="PlayersComboBox">
+                <ComboBoxItem>Player</ComboBoxItem>
+                <ComboBoxItem>Opponent</ComboBoxItem>
+            </ComboBox>
+            <Label></Label>
+            <Button Name ="AI" Content="Best Move" Click="AI_Click"></Button>
         </StackPanel>
     </StackPanel>
 </Window>
