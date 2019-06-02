@@ -1,0 +1,7 @@
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\bin\Debug\MestintAI_Chains.exe.config
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\bin\Debug\MestintAI_Chains.exe
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\bin\Debug\MestintAI_Chains.pdb
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\obj\Debug\MestintAI_Chains.csprojAssemblyReference.cache
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\obj\Debug\MestintAI_Chains.csproj.CoreCompileInputs.cache
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\obj\Debug\MestintAI_Chains.exe
+D:\_Egyetem\6.félév\Mestint\MestintAI_Chains\MestintAI_Chains\obj\Debug\MestintAI_Chains.pdb
