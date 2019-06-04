@@ -148,7 +148,8 @@ namespace MestintAI_Rectangles
                         problem.SetGoalState(goalGrid);
                         problem.SetStartState(startGrid);
                         startNode = problem.GetStartNode();
-                        bool solved = DepthFirstSearch(startNode, goalGrid);
+                        Search search = new Search();
+                        bool solved = search.DepthFirstSearch(startNode, goalGrid);
 
                         if (!solved)
                         {
@@ -156,37 +157,15 @@ namespace MestintAI_Rectangles
                         }
                         else
                         {
-                            Console.WriteLine("Solution found:");
+                            Console.WriteLine("Solution found!");
                         }
-
+                        Console.ReadKey();
+                        Console.ReadKey();
                     }
                 }
             }
         }
-
-        static bool DepthFirstSearch(Node startState, List<int[]> goal)
-        {
-            Stack<Node> stack = new Stack<Node>();
-            stack.Push(startState);
-
-            while(stack.Count > 0)
-            {
-                Node node = stack.Pop();
-                if(Problem.IsGoalState(node.GetState(), goal))
-                {
-                    return true;
-                }
-                else
-                {
-                    foreach (Node state in node.GetChildren())
-                    {
-                        stack.Push(state);
-                    }
-                }
-            }
-            return false;
-        }
-
+       
         static void DisplayGrid(List<int[]> grid)
         {
             for (int i = 0; i < grid.Count; i++)

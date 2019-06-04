@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace MestintAI_Chains
 {
     class Board
-    {
-        
-
+    {       
         List<int[]> originalBoard = new List<int[]>()
             {
                 new int[]{0,0,0,0 },
@@ -42,32 +40,32 @@ namespace MestintAI_Chains
         public int WhoIsWinning(List<int[]> board)
         {
             int player = 0;
-                      int opponent = 0;
-        
-                      for (int i = 0; i < board.Count; i++)
-                      {
-                          for (int j = 0; j < board[i].Length; j++)
-                          {
-                              if (board[i][j] == 1)
-                              {
-                                  player++;
-                              }
-                              else if(board[i][j] == 2)
-                              {
-                                  opponent++;
-                              }
-                          }
-                      }
-                      if (player == 5)
-                      {
-                          return 10;
-                      }
-                      if (opponent == 5)
-                      {
-                          return 10;
-                      }
-                      return 0;
+            int opponent = 0;
+
+            for (int i = 0; i < board.Count; i++)
+            {
+                for (int j = 0; j < board[i].Length; j++)
+                {
+                    if (board[i][j] == 1)
+                    {
+                        player++;
+                    }
+                    else if (board[i][j] == 2)
+                    {
+                        opponent++;
+                    }
                 }
+            }
+            if (player == 5)
+            {
+                return 10;
+            }
+            if (opponent == 5)
+            {
+                return 10;
+            }
+            return 0;
+        }
 
         public void Display(List<int[]> board)
         {

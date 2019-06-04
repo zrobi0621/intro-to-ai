@@ -85,7 +85,6 @@ namespace MestintAI_Chains
             }
         }
 
-
         public static void SetBoard(List<int[]> board)
         {
             gameBoard = board;

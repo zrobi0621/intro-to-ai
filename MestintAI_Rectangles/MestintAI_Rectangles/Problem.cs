@@ -30,7 +30,7 @@ namespace MestintAI_Rectangles
 
         public void SetStartNode(List<int[]> state)
         {
-            startNode = new Node(state, null, null);
+            startNode = new Node(state, null);
         }
 
         public Node GetStartNode()
@@ -40,7 +40,20 @@ namespace MestintAI_Rectangles
 
         public static bool IsGoalState(List<int[]> state, List<int[]> goalState)
         {
-            if (state == goalState)
+            int c = 0;
+
+            for (int i = 0; i < state.Count; i++)
+            {
+                for (int j = 0; j < state[i].Length; j++)
+                {
+                    if (state[i][j] == goalState[i][j])
+                    {
+                        c++;
+                    }
+                }
+            }
+
+            if (c == 16)
             {
                 return true;
             }
